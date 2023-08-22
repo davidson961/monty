@@ -37,6 +37,7 @@ void div_opcode(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number); // New prototype for mod opcode
 void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 int is_numeric(const char *str);
 
