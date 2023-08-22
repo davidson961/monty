@@ -16,5 +16,6 @@ void pstr(stack_t **stack, unsigned int line_number)
     }
 
     printf("\n");
-    (void)line_number; // Unused parameter
+    /* Unused parameter */
+    (void)line_number; 
 }
