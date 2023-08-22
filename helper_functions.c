@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <ctype.h>
 
 /* Function to check if a string is a numeric value */
 int is_numeric(const char *str)
