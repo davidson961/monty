@@ -4,64 +4,36 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        fprintf(stderr, "USAGE: monty file\n");
-        return EXIT_FAILURE;
+        fprintf(stderr, "Usage: %s file\n", argv[0]);
+        exit(EXIT_FAILURE);
     }
 
+    // Open and read the Monty ByteCodes file (argv[1])
     FILE *file = fopen(argv[1], "r");
-    if (!file)
+    if (file == NULL)
     {
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-        return EXIT_FAILURE;
+        exit(EXIT_FAILURE);
     }
 
+    // Initialize the stack and other variables
     stack_t *stack = NULL;
     char *line = NULL;
-    size_t line_len = 0;
+    size_t len = 0;
     unsigned int line_number = 0;
-    instruction_t instructions[] = {
-        {"push", push},
-        {"pall", pall},
-        {"pint", pint},
-        {"pop", pop},
-        {"swap", swap},
-        {"add", add},
-        {"nop", nop},
-        {NULL, NULL}
-    };
 
-    while (getline(&line, &line_len, file) != -1)
+    // Read and interpret each line from the file
+    while (getline(&line, &len, file) != -1)
     {
         line_number++;
-        char *opcode = strtok(line, " \t\n");
-        if (opcode)
-        {
-            int valid_opcode = 0;
-            for (int i = 0; instructions[i].opcode != NULL; i++)
-            {
-                if (strcmp(opcode, instructions[i].opcode) == 0)
-                {
-                    valid_opcode = 1;
-                    opcode_func func = instructions[i].func;
-                    func(&stack, line_number);
-                    break;
-                }
-            }
-            if (!valid_opcode)
-            {
-                fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-                fclose(file);
-                if (line)
-                    free(line);
-                free_stack(stack);
-                return EXIT_FAILURE;
-            }
-        }
+        // Parse the line and call the appropriate opcode function
+        // You need to implement this part based on your project logic
     }
 
+    // Clean up and close the file
+    free(line);
     fclose(file);
-    if (line)
-        free(line);
     free_stack(stack);
+
     return 0;
 }
