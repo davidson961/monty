@@ -9,7 +9,7 @@ int is_numeric(const char *str)
 
     for (size_t i = 0; str[i] != '\0'; i++)
     {
-        if (!isdigit(str[i]) && str[i] != '-')
+        if (!isdigit((unsigned char)str[i]) && str[i] != '-')
             return 0;
     }
     return 1;
