@@ -9,9 +9,9 @@
 /* Data structure for stack */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /* Opcode function typedef */
@@ -20,8 +20,8 @@ typedef void (*opcode_func)(stack_t **stack, unsigned int line_number);
 /* Instruction structure */
 typedef struct instruction_s
 {
-    char *opcode;
-    opcode_func func;
+	char *opcode;
+	opcode_func func;
 } instruction_t;
 
 /* Function prototypes */
