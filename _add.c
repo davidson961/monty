@@ -1,16 +1,24 @@
 #include "monty.h"
 
-/* Function to add the top two elements of the stack */
+/**
+ * add - Adds the top two elements of the stack.
+ * @stack: Double pointer to the top of the stack.
+ * @line_number: Line number in the file.
+ */
 void add(stack_t **stack, unsigned int line_number)
 {
-    if (*stack == NULL || (*stack)->next == NULL)
-    {
-        fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-        free_stack(*stack);
-        exit(EXIT_FAILURE);
-    }
+	stack_t *temp;
 
-    int sum = (*stack)->n + (*stack)->next->n;
-    pop(stack, line_number); // Remove the top element
-    (*stack)->n = sum; // Store the result in the new top element
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *stack;
+	(*stack)->next->n += (*stack)->n;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	free(temp);
 }
