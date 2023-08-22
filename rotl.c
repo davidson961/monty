@@ -19,6 +19,4 @@ void rotl(stack_t **stack, unsigned int line_number)
     *stack = first->next;
     first->next = NULL;
     last->next = first;
-
-    (void)line_number; // Unused parameter
 }
