@@ -7,10 +7,7 @@ void push(stack_t **stack, unsigned int line_number)
     if (!arg || !is_numeric(arg))
     {
         fprintf(stderr, "L%d: usage: push integer\n", line_number);
-        fclose(file);
-        if (line)
-            free(line);
-        free_stack(stack);
+        free_stack(*stack);
         exit(EXIT_FAILURE);
     }
 
@@ -19,10 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
     if (!new_node)
     {
         fprintf(stderr, "Error: malloc failed\n");
-        fclose(file);
-        if (line)
-            free(line);
-        free_stack(stack);
+        free_stack(*stack);
         exit(EXIT_FAILURE);
     }
 
