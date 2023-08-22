@@ -23,5 +23,4 @@ void rotr(stack_t **stack, unsigned int line_number)
     last->next = *stack;
     *stack = last;
 
-    (void)line_number; // Unused parameter
 }
