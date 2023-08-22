@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    // Open and read the Monty ByteCodes file (argv[1])
+    /* Open and read the Monty ByteCodes file (argv[1]) */
     FILE *file = fopen(argv[1], "r");
     if (file == NULL)
     {
@@ -16,21 +16,21 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    // Initialize the stack and other variables
+    /* Initialize the stack and other variables */
     stack_t *stack = NULL;
     char *line = NULL;
     size_t len = 0;
     unsigned int line_number = 0;
 
-    // Read and interpret each line from the file
+    /* Read and interpret each line from the file */
     while (getline(&line, &len, file) != -1)
     {
         line_number++;
-        // Parse the line and call the appropriate opcode function
-        // You need to implement this part based on your project logic
+        /* Parse the line and call the appropriate opcode function */
+        /* You need to implement this part based on your project logic */
     }
 
-    // Clean up and close the file
+    /* Clean up and close the file */
     free(line);
     fclose(file);
     free_stack(stack);
