@@ -7,7 +7,8 @@ int is_numeric(const char *str)
     if (str == NULL || *str == '\0')
         return 0;
 
-    for (size_t i = 0; str[i] != '\0'; i++)
+    size_t i;
+    for (i = 0; str[i] != '\0'; i++)
     {
         if (!isdigit((unsigned char)str[i]) && str[i] != '-')
             return 0;
