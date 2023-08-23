@@ -3,7 +3,6 @@
 /**
  * rotl - Rotates the stack to the top.
  * @stack: Double pointer to the top of the stack.
- * @line_number: Line number in the file.
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
