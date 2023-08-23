@@ -4,11 +4,11 @@
 /* Function to check if a string is a numeric value */
 int is_numeric(const char *str)
 {
-    size_t i; // Declare i here
+    size_t i; 
     if (str == NULL || *str == '\0')
         return 0;
 
-    for (i = 0; str[i] != '\0'; i++) // Move the declaration here
+    for (i = 0; str[i] != '\0'; i++) 
     {
         if (!isdigit((unsigned char)str[i]) && str[i] != '-')
             return 0;
