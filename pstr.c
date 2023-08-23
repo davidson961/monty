@@ -1,10 +1,11 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * pstr - Prints the string starting at the top of the stack.
  * @stack: Double pointer to the top of the stack.
  */
-void pstr(stack_t **stack, unsigned int line_number)
+void pstr(stack_t **stack)
 {
     stack_t *current = *stack;
 
