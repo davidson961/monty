@@ -5,6 +5,7 @@
  * @stack: Double pointer to the top of the stack.
  * @line_number: Line number in the file.
  */
+
 void push(stack_t **stack, unsigned int line_number)
 int is_numeric(const char *str);
 
