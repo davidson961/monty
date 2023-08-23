@@ -7,7 +7,6 @@
  */
 
 void push(stack_t **stack, unsigned int line_number)
-int is_numeric(const char *str);
 
 {
 	stack_t *new_node;
