@@ -4,18 +4,21 @@
  * rotl - Rotates the stack to the top.
  * @stack: Double pointer to the top of the stack.
  */
-void rotl(stack_t **stack, unsigned int line_number)
+void rotl(stack_t **stack)
 {
-    stack_t *first = *stack;
-    stack_t *last = *stack;
+    if (*stack && (*stack)->next)
+    {
+        stack_t *first = *stack;
+        stack_t *last = *stack;
 
-    if (*stack == NULL || (*stack)->next == NULL)
-        return;
+        while (last->next)
+            last = last->next;
 
-    while (last->next != NULL)
-        last = last->next;
+        *stack = first->next;
+        (*stack)->prev = NULL;
 
-    *stack = first->next;
-    first->next = NULL;
-    last->next = first;
+        last->next = first;
+        first->prev = last;
+        first->next = NULL;
+    }
 }
