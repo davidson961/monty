@@ -40,7 +40,7 @@ typedef struct instruction_s
 extern struct monty_global_s
 {
     int data_structure;
-} global.data_structure;
+} global;
 
 /* Opcode function prototypes */
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
