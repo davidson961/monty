@@ -1,5 +1,8 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
