@@ -1,22 +1,12 @@
-
-
 #include <stdlib.h>
 
-char **strtow(char *str, char *delims);
-int is_delim(char ch, char *delims);
-int get_word_length(char *str, char *delims);
-int get_word_count(char *str, char *delims);
-char *get_next_word(char *str, char *delims);
 
 /**
- * strtow - takes a string and seperates its words
- *
- * @str: string to seperate into words
- * @delims: delimitors to use to delimit words
- *
- * Return: 2D array of pointers to each word
+ * strtow - Splits a string into individual words using delimiters.
+ * @str: The string to be split into words.
+ * @delims: Delimiters used to separate words.
+ * Return: A 2D array of pointers, with each pointer pointing to an individual word.
  */
-
 char **strtow(char *str, char *delims)
 {
 	char **words = NULL;
@@ -56,24 +46,20 @@ char **strtow(char *str, char *delims)
 			words[i][n] = *(str + n);
 			n++;
 		}
-		words[i][n] = '\0'; /* set end of str */
+		words[i][n] = '\0';
 		str = get_next_word(str, delims);
 		i++;
 	}
-	words[i] = NULL; /* last element is null for iteration */
+	words[i] = NULL;
 	return (words);
 }
 
 /**
- * is_delim - checks if stream has delimitor char
- *
- * @ch: character in stream
- *
- * @delims: Pointer to null terminated array of delimitors
- *
- * Return: 1 (success) 0 (failure)
+ * is_delim - Checks if a character in a stream is a delimiter.
+ * @ch: The character to check in the stream.
+ * @delims: Pointer to a null-terminated array of delimiters.
+ * Return: 1 (success) if the character is a delimiter, 0 (failure) otherwise.
  */
-
 int is_delim(char ch, char *delims)
 {
 	int i = 0;
@@ -88,14 +74,11 @@ int is_delim(char ch, char *delims)
 }
 
 /**
- * get_word_length - gets the word length of cur word in str
- *
- * @str: string to get word length from current word
- * @delims: delimitors to use to delimit words
- *
- * Return: word length of current word
+ * get_word_length - Retrieves the length of the current word in a string.
+ * @str: The string from which to get the word length of the current word.
+ * @delims: Delimiters used to separate words.
+ * Return: The length of the current word.
  */
-
 int get_word_length(char *str, char *delims)
 {
 	int wLen = 0, pending = 1, i = 0;
@@ -116,14 +99,11 @@ int get_word_length(char *str, char *delims)
 }
 
 /**
- * get_word_count - gets the word count of a string
- *
- * @str: string to get word count from
- * @delims: delimitors to use to delimit words
- *
- * Return: the word count of the string
+ * get_word_count - Counts the number of words in a string.
+ * @str: The string from which to count words.
+ * @delims: Delimiters used to separate words.
+ * Return: The word count in the string.
  */
-
 int get_word_count(char *str, char *delims)
 {
 	int wc = 0, pending = 1, i = 0;
@@ -143,14 +123,11 @@ int get_word_count(char *str, char *delims)
 }
 
 /**
- * get_next_word - gets the next word in a string
- *
- * @str: string to get next word from
- * @delims: delimitors to use to delimit words
- *
- * Return: pointer to first char of next word
+ * get_next_word - Retrieves the next word in a string.
+ * @str: The string to extract the next word from.
+ * @delims: Delimiters used to separate words.
+ * Return: A pointer to the first character of the next word.
  */
-
 char *get_next_word(char *str, char *delims)
 {
 	int pending = 0;
