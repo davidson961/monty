@@ -1,17 +1,9 @@
-
 #include <stdlib.h>
 
-char *get_int(int num);
-unsigned int _abs(int);
-int get_numbase_len(unsigned int num, unsigned int base);
-void fill_numbase_buff(unsigned int num, unsigned int base,
-		       char *buff, int buff_size);
-
 /**
- * get_int - gets a character pointer to new string containing int
- * @num: number to convert to string
- *
- * Return: character pointer to newly created string. NULL if malloc fails.
+ * get_int - Converts an integer to a character pointer for a new string.
+ * @num: The number to convert to a string.
+ * Return: A character pointer to the newly created string, or NULL if malloc fails.
  */
 char *get_int(int num)
 {
@@ -24,8 +16,8 @@ char *get_int(int num)
 	length = get_numbase_len(temp, 10);
 
 	if (num < 0 || num_l < 0)
-		length++; /* negative sign */
-	ret = malloc(length + 1); /* create new string */
+		length++;
+	ret = malloc(length + 1);
 	if (!ret)
 		return (NULL);
 
@@ -37,10 +29,9 @@ char *get_int(int num)
 }
 
 /**
- * _abs - gets the absolute value of an integer
- * @i: integer to get absolute value of
- *
- * Return: unsigned integer abs rep of i
+ * _abs - Calculates the absolute value of an integer.
+ * @i: The integer to find the absolute value of.
+ * Return: An unsigned integer representing the absolute value of i.
  */
 unsigned int _abs(int i)
 {
@@ -50,11 +41,10 @@ unsigned int _abs(int i)
 }
 
 /**
- * get_numbase_len - gets length of buffer needed for an unsigned int
- * @num: number to get length needed for
- * @base: base of number representation used by buffer
- *
- * Return: integer containing length of buffer needed (doesn't contain null bt)
+ * get_numbase_len - Calculates the length of the buffer needed for an unsigned integer.
+ * @num: The number to get the length needed for.
+ * @base: The base of the number representation used by the buffer.
+ * Return: An integer containing the length of the buffer needed (excluding the null byte).
  */
 int get_numbase_len(unsigned int num, unsigned int base)
 {
@@ -69,13 +59,12 @@ int get_numbase_len(unsigned int num, unsigned int base)
 }
 
 /**
- * fill_numbase_buff - fills buffer with correct numbers up to base 36
- * @num: number to convert to string given base
- * @base: base of number used in conversion, only works up to base 36
- * @buff: buffer to fill with result of conversion
- * @buff_size: size of buffer in bytes
- *
- * Return: always void.
+ * fill_numbase_buff - Fills a buffer with the correct numbers up to base 36.
+ * @num: The number to convert to a string using the specified base.
+ * @base: The base of the number used in the conversion (up to base 36).
+ * @buff: The buffer to fill with the result of the conversion.
+ * @buff_size: The size of the buffer in bytes.
+ * Return: Always void.
  */
 void fill_numbase_buff(unsigned int num, unsigned int base,
 			char *buff, int buff_size)
