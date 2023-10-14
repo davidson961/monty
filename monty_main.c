@@ -1,5 +1,3 @@
-
-
 #include "monty.h"
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -8,12 +6,10 @@
 char **op_toks = NULL;
 
 /**
- * main - the entry point for Monty Interp
- *
- * @argc: the count of arguments passed to the program
- * @argv: pointer to an array of char pointers to arguments
- *
- * Return: (EXIT_SUCCESS) on success (EXIT_FAILURE) on error
+ * main - Entry point for the Monty Interp program
+ * @argc: The number of command-line arguments
+ * @argv: An array of strings containing the command-line arguments
+ * Return: EXIT_SUCCESS on success, EXIT_FAILURE on error
  */
 int main(int argc, char **argv)
 {
