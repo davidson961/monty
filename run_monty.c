@@ -1,16 +1,8 @@
-
-
 #include "monty.h"
 #include <string.h>
 
-void free_tokens(void);
-unsigned int token_arr_len(void);
-int is_empty_line(char *line, char *delims);
-void (*get_op_func(char *opcode))(stack_t**, unsigned int);
-int run_monty(FILE *script_fd);
-
 /**
- * free_tokens - Frees the global op_toks array of strings.
+ * free_tokens - Deallocates memory for the global op_toks string array.
  */
 void free_tokens(void)
 {
@@ -26,9 +18,8 @@ void free_tokens(void)
 }
 
 /**
- * token_arr_len - Gets the length of current op_toks.
- *
- * Return: Length of current op_toks (as int).
+ * token_arr_len - Calculates the length of the current op_toks array.
+ * Return: The length of the current op_toks as an integer.
  */
 unsigned int token_arr_len(void)
 {
@@ -40,12 +31,10 @@ unsigned int token_arr_len(void)
 }
 
 /**
- * is_empty_line - Checks if a line read from getline only contains delimiters.
+ * is_empty_line - Checks if a line read from getline consists solely of delimiters.
  * @line: A pointer to the line.
  * @delims: A string of delimiter characters.
- *
- * Return: If the line only contains delimiters - 1.
- *         Otherwise - 0.
+ * Return: 1 if the line only contains delimiters, 0 otherwise.
  */
 int is_empty_line(char *line, char *delims)
 {
@@ -66,10 +55,9 @@ int is_empty_line(char *line, char *delims)
 }
 
 /**
- * get_op_func - Matches an opcode with its corresponding function.
+ * get_op_func - Matches an opcode with its associated function.
  * @opcode: The opcode to match.
- *
- * Return: A pointer to the corresponding function.
+ * Return: A pointer to the associated function.
  */
 void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 {
@@ -105,10 +93,9 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 }
 
 /**
- * run_monty - Primary function to execute a Monty bytecodes script.
- * @script_fd: File descriptor for an open Monty bytecodes script.
- *
- * Return: EXIT_SUCCESS on success, respective error code on failure.
+ * run_monty - Executes a Monty bytecode script.
+ * @script_fd: File descriptor for an open Monty bytecode script.
+ * Return: EXIT_SUCCESS on success, the corresponding error code on failure.
  */
 int run_monty(FILE *script_fd)
 {
