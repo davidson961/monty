@@ -10,10 +10,10 @@ void open_file(char *file_path)
 {
 	FILE *filedes = fopen(file_path, "r");
 
-	if (file_path == NULL || finedes == NULL)
+	if (file_path == NULL || filedes == NULL)
 		err(2, file_path);
 
-	read_file(finedes);
+	read_file(filedes);
 	fclose(filedes);
 }
 
