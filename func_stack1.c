@@ -57,7 +57,7 @@ void add_to_queue(stack_t **recent_node,
  * print_stack - Displays the contents of a stack.
  * @stack: The pointer to a pointer pointing to the top node of the stack.
  */
-void print_stack(stack_t **stack)
+void print_stack(stack_t **stack, unsigned int line_num)
 {
 	stack_t *temp;
 	
