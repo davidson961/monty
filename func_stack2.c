@@ -1,17 +1,6 @@
 #include "monty.h"
 
 
-/**
- * nop - Performs no operation.
- * @stack: The pointer to a pointer pointing to the top node of the stack.
- * @line_num: An integer showing the line number of the opcode.
- */
-void nop(stack_t **stack, unsigned int line_num)
-{
-	(void)stack;
-	(void)line_num;
-}
-
 
 /**
  * free_nodes - Deallocates memory for nodes in the stack.
@@ -71,6 +60,18 @@ void add_nodes(stack_t **stack, unsigned int line_num)
 	(*stack)->n = total;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
+}
+
+
+/**
+ * nop - Performs no operation.
+ * @stack: The pointer to a pointer pointing to the top node of the stack.
+ * @line_num: An integer showing the line number of the opcode.
+ */
+void nop(stack_t **stack, unsigned int line_num)
+{
+	(void)stack;
+	(void)line_num;
 }
 
 
