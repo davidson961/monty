@@ -60,7 +60,7 @@ void string_err(int err_code, ...);
 void rotr(stack_t **, unsigned int);
 void print_char(stack_t **, unsigned int);
 void free_nodes(void);
-void print_stack(stack_t **, unsigned int);
+void print_stack(stack_t **stack);
 void add_to_stack(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);
 void print_str(stack_t **, unsigned int);
