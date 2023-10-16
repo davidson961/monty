@@ -59,16 +59,17 @@ void add_to_queue(stack_t **recent_node,
  */
 void print_stack(stack_t **stack)
 {
-    stack_t *temp;
-
-    if (stack == NULL)
-        exit(EXIT_FAILURE);
-    temp = *stack;
-    while (temp != NULL)
-    {
-        printf("%d\n", temp->n);
-        temp = temp->next;
-    }
+	stack_t *temp;
+	
+	(void) line_num;
+	if (stack == NULL)
+		exit(EXIT_FAILURE);
+	temp = *stack;
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }
 
 
