@@ -14,6 +14,25 @@ void nop(stack_t **stack, unsigned int line_num)
 
 
 /**
+ * free_nodes - Deallocates memory for nodes in the stack.
+ */
+void free_nodes(void)
+{
+	stack_t *temp;
+
+	if (head == NULL)
+		return;
+
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+}
+
+
+/**
  * swap_nodes - Exchanges the positions of the top two elements in the stack.
  * @stack: The pointer to a pointer pointing to the top node of the stack.
  * @line_num: An integer showing the line number of the opcode.
@@ -76,24 +95,3 @@ void sub_nodes(stack_t **stack, unsigned int line_num)
 	(*stack)->prev = NULL;
 }
 
-
-/**
- * div_nodes - Divides the values of the top two elements in the stack.
- * @stack: The pointer to a pointer pointing to the top node of the stack.
- * @line_num: An integer showing the line number of the opcode.
- */
-void div_nodes(stack_t **stack, unsigned int line_num)
-{
-	int total;
-
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_num, "div");
-
-	if ((*stack)->n == 0)
-		more_err(9, line_num);
-	(*stack) = (*stack)->next;
-	total = (*stack)->n / (*stack)->prev->n;
-	(*stack)->n = total;
-	free((*stack)->prev);
-	(*stack)->prev = NULL;
-}
