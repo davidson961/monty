@@ -8,7 +8,7 @@
 void free_nodes(void)
 {
 	stack_t *temp;
-	stack_t *head;
+	stack_t *head = NULL;
 
 	if (head == NULL)
 		return;
