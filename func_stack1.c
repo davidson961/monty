@@ -10,6 +10,7 @@ void add_to_stack(stack_t **recent_node,
 		__attribute__((unused))unsigned int line_num)
 {
 	stack_t *temp;
+	stack_t *head;
 
 	if (recent_node == NULL || *recent_node == NULL)
 		exit(EXIT_FAILURE);
@@ -34,6 +35,7 @@ void add_to_queue(stack_t **recent_node,
 		__attribute__((unused))unsigned int line_num)
 {
 	stack_t *temp;
+	stack_t *head;
 
 	if (recent_node == NULL || *recent_node == NULL)
 		exit(EXIT_FAILURE);
