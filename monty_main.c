@@ -1,5 +1,4 @@
 #include "monty.h"
-stack_t *head = NULL;
 
 
 /**
@@ -19,25 +18,4 @@ int main(int argc, char *argv[])
 	free_nodes();
 	return (0);
 }
-
-
-
-/**
- * free_nodes - Deallocates memory for nodes in the stack.
- */
-void free_nodes(void)
-{
-	stack_t *temp;
-
-	if (head == NULL)
-		return;
-
-	while (head != NULL)
-	{
-		temp = head;
-		head = head->next;
-		free(temp);
-	}
-}
-
 
